@@ -1,0 +1,19 @@
+ul {
+    list-style: none;
+}
+
+ul li {
+    width: 100px;
+    height: 40px;
+    line-height: 40px;
+    background-color: teal;
+    text-align: center;
+    border-bottom: 1px solid #fff;
+    position: relative;
+}
+
+ul li .submenu {
+    position: absolute;
+    left: 100%;
+    display: none;
+}
