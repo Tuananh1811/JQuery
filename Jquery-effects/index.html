@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <style>
+        .container {
+            width: 90%;
+            margin: 0 auto;
+        }
+        
+        .container button {
+            cursor: pointer;
+        }
+        
+        .box {
+            width: 200px;
+            height: 200px;
+            background-color: deepskyblue;
+        }
+        
+        .box2 {
+            width: 50px;
+            height: 50px;
+            background-color: deepskyblue;
+            position: relative;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <button class="btnFadeOut">fade out</button>
+        <button class="btnFadeIn">fade in</button>
+        <button class="btnFadeTog">fade Toggle</button>
+        <hr>
+        <button class="btnSlideUp">Slide up</button>
+        <button class="btnSlideDown">Slide down</button>
+        <button class="btnSildeTog">slide Toggle</button>
+        <hr>
+        <br>
+        <div class="box">hello</div>
+        <hr>
+        <button class="moveLeft">Left</button>
+        <button class="moveRight">Right</button>
+        <button class="moveAround">Around</button>
+        <hr>
+        <div class="box2"></div>
+    </div>
+    <script>
+        $(function() {
+            $('.btnFadeOut').click(function() {
+                $('.box').fadeOut(1000, function() {
+                    $('.btnFadeOut').text('hello tuấn anh')
+                });
+            })
+            $('.btnFadeIn').click(function() {
+                $('.box').fadeIn();
+            })
+            $('.btnFadeTog').click(function() {
+                $('.box').fadeToggle();
+            })
+            $('.btnSlideUp').click(function() {
+                $('.box').slideUp();
+            })
+            $('.btnSlideDown').click(function() {
+                $('.box').slideDown();
+            })
+            $('.btnSildeTog').click(function() {
+                    $('.box').slideToggle();
+                })
+                //=====//
+            $('.moveLeft').click(function() {
+                $('.box2').animate({
+                    left: 0
+                })
+            })
+            $('.moveRight').click(function() {
+                $('.box2').animate({
+                    left: 500
+
+                })
+            })
+            $('.moveAround').click(function() {
+                var box = $('.box2');
+                box.animate({
+                    left: 500
+                });
+                box.animate({
+                    top: 500
+                });
+                box.animate({
+                    top: 500,
+                    left: 0
+                });
+                box.animate({
+                    top: 0,
+                    left: 0
+                });
+
+            });
+        });
+    </script>
+
+
+</body>
+
+</html>
